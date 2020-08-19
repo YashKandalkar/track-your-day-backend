@@ -70,4 +70,4 @@ app.put('/markCompleted', (req, res) => markCompleted(req, res, db));
 
 app.delete('/deleteTasks', (req, res) => deleteTasks(req, res, db));
 
-app.listen(3001, () => console.log('Gator app listening on port 3001!'));
+app.listen(process.env.PORT || 3001, () => console.log('Gator app listening on port 3001!'));
