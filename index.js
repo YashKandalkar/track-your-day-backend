@@ -21,7 +21,13 @@ app.use(cors());
 
 const db = knex({
     client: 'pg',
-    connection: process.env.DATABASE_URL
+    connection: (process.env.DEV !== "true")?process.env.DATABASE_URL
+        : {
+            host : '127.0.0.1',
+            user : 'postgres',
+            password : 'yash',
+            database : 'track-your-day'
+        }
 });
 
 const days_in_between = (StartDate, EndDate) => {
