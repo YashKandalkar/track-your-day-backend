@@ -23,7 +23,10 @@ const db = knex({
   ssl: true,
   connection:
     process.env.DEV !== "true"
-      ? process.env.DATABASE_URL
+      ? {
+          connectionString: process.env.DATABASE_URL,
+          ssl: { rejectUnauthorized: false },
+        }
       : {
           host: "127.0.0.1",
           user: "postgres",
