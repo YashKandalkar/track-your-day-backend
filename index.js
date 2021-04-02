@@ -20,7 +20,6 @@ app.use(cors({ origin: "https://yashkandalkar.github.io" }));
 
 const db = knex({
   client: "pg",
-  ssl: true,
   connection:
     process.env.DEV !== "true"
       ? {
