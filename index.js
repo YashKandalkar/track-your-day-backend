@@ -16,7 +16,7 @@ import markCompleted from "./controllers/markCompleted.js";
 const app = express();
 
 app.use(express.json());
-app.use(cors({ origin: "https://yashkandalkar.github.io" }));
+app.use(cors({ origin: ["https://yashkandalkar.github.io", "http://localhost:3000"] }));
 
 const db = knex({
   client: "pg",
